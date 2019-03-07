@@ -1,0 +1,40 @@
+.table-header th {
+    padding: 10px 0;
+    font-size: 18px;
+    text-align: center;
+}
+.table-header .row {
+    margin: 0;
+}
+
+.entries td {
+    padding: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.entries .day {
+    font-size: 20px;
+}
+
+.entries .row {
+    display: flex;
+    margin: 0;
+}
+
+.entries .row:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.entries .row > div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.entries .row > div:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+.not-found-info {
+    font-size: 24px;
+}

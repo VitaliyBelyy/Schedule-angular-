@@ -1,0 +1,78 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="formSelect1">Номер занятия</label>
+      <select class="form-control" [(ngModel)]="lessonNumberField" name="lessonNumber" id="formSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect2">Тип занятия</label>
+      <select class="form-control" [(ngModel)]="lessonTypeField" name="lessonType" id="formSelect2">
+        <option>Лекция</option>
+        <option>Лабораторная работа</option>
+        <option>Практическое занятие</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect3">День недели</label>
+      <select class="form-control" [(ngModel)]="weekDayField" name="weekDay" id="formSelect3">
+        <option value="1">Понедельник</option>
+        <option value="2">Вторник</option>
+        <option value="3">Среда</option>
+        <option value="4">Четверг</option>
+        <option value="5">Пятница</option>
+        <option value="6">Суббота</option>
+        <option value="7">Воскресенье</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect4">Тип недели</label>
+      <select class="form-control" [(ngModel)]="weekTypeField" name="weekType" id="formSelect4">
+        <option>Числитель</option>
+        <option>Знаменатель</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect5">Аудитория</label>
+      <select class="form-control" [(ngModel)]="auditoryField" name="auditory" id="formSelect5">
+        <option *ngFor="let auditory of auditories" value="{{auditory.id}}">{{auditory.number}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect6">Группа</label>
+      <select class="form-control" [(ngModel)]="groupField" name="group" id="formSelect6">
+        <option *ngFor="let group of groups" value="{{group.id}}">{{group.nameGroup}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect7">Преподаватель</label>
+      <select class="form-control" [(ngModel)]="teacherField" name="teacher" id="formSelect7">
+        <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.fullName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect8">Предмет</label>
+      <select class="form-control" [(ngModel)]="subjectField" name="subject" id="formSelect8">
+        <option *ngFor="let subject of subjects" value="{{subject.id}}">{{subject.name}}</option>
+      </select>
+    </div>
+    <div class="buttons-wrapper form-group">
+      <button routerLink="/admin/timetable" class="btn btn-danger">Отменить</button>
+      <button type="submit" class="btn btn-success">Подтвердить</button>
+    </div>
+    <hr>
+    <div *ngIf="editState" class="form-group single-btn-wrapper">
+      <button (click)="confirm('Удалить запись?') ? deleteData() : null" class="btn btn-danger"><i class="far fa-trash-alt"></i> Удалить</button>
+    </div>
+  </form>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+</div>

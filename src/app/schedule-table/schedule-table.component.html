@@ -1,0 +1,31 @@
+<table *ngIf="data.length" class="table table-bordered table-condenced headline">
+
+  <tr class="table-header">
+    <th>День недели</th>
+    <th>
+        <div class="row">
+          <div class="col-md-1"><span>№</span></div>
+          <div class="col-md-2"><span>Тип занятия</span></div>
+          <div class="col-md-2"><span>Аудитория</span></div>
+          <div class="col-md-1"><span>Группа</span></div>
+          <div class="col-md-3"><span>Предмет</span></div>
+          <div class="col-md-3"><span>Преподаватель</span></div>
+        </div>
+    </th>
+  </tr>
+
+  <tr *ngFor="let dailySchedule of data" class="entries">
+    <td class="success day">{{supportingInfo?.weekDays[dailySchedule.weekDay]}}</td>
+    <td>
+        <div *ngFor="let item of dailySchedule.timetableItems" class="row">
+          <div class="col-md-1"><span>{{item.lessonNumber}}</span></div>
+          <div class="col-md-2"><span>{{item.lessonType}}</span></div>
+          <div class="col-md-2"><span>{{supportingInfo?.auditories[item.auditoryID]}}</span></div>
+          <div class="col-md-1"><span>{{supportingInfo?.groups[item.groupID]}}</span></div>
+          <div class="col-md-3"><span>{{supportingInfo?.subjects[item.subjectID]}}</span></div>
+          <div class="col-md-3"><span>{{supportingInfo?.teachers[item.teacherID]}}</span></div>
+        </div>
+    </td>
+  </tr>
+</table>
+<p *ngIf="!data.length" class="not-found-info">Записи не найдены.</p>

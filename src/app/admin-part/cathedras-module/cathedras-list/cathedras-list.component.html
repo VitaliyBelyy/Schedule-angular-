@@ -1,0 +1,12 @@
+<table class="table admin-page__table">
+  <tr>
+    <th>Кафедра</th>
+    <th>Факультет</th>
+  </tr>
+  <tr *ngFor="let cathedra of results.cathedras" routerLink="/admin/cathedras/form" [queryParams]="{id: cathedra.id}" class="admin-page__row">
+    <td>{{ cathedra.name }}</td>
+    <td>{{ results.departments[cathedra.departmentID] }}</td>
+  </tr>
+</table>
+<p class="total-count">{{ totalRows }} cathedra{{ totalRows != 1 ? 's' : ''}} in total.</p>
+<a class="btn btn-primary add-new" routerLink="/admin/cathedras/form"><i class="fas fa-plus"></i> Добавить Кафедру</a>

@@ -1,0 +1,2 @@
+<app-login-form *ngIf="!isLoggedIn" (login)="login()"></app-login-form>
+<app-admin-page *ngIf="isLoggedIn" (logout)="logout()"></app-admin-page>

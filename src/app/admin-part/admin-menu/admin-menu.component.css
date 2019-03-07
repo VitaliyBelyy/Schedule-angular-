@@ -1,0 +1,14 @@
+.nav-sidebar a {
+    color: #9babc6;
+    text-decoration: none;
+}
+
+.nav-sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.nav-sidebar a.active {
+    background-color: #16af16;
+    color: white;
+}

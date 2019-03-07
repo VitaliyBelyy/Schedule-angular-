@@ -1,0 +1,23 @@
+<div class="navbar navbar-inverse" id="admin-navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="user-details">
+        <p class="navbar-text">Ви вошли как <b>{{ username }}</b></p>
+        <ul class="sub-menu">
+          <li><a routerLink="/admin/edit-user" [queryParams]="{username: username}">Редактировать учетную запись</a></li>
+          <li><a href="#" (click)="onOut($event)">Выйти</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <app-admin-menu></app-admin-menu>
+    </div>
+    <div class="col-sm-9 col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

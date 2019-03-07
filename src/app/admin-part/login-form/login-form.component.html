@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="form-wrapper">
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group" >
+        <label for="loginInput">Логин</label>
+        <input type="text" class="form-control" [(ngModel)]="loginField" name="login" id="loginInput" required />
+      </div>
+      <div class="form-group">
+        <label for="passwordInput">Пароль</label>
+        <input type="password" class="form-control" [(ngModel)]="passwordField" name="password" id="passwordInput" required />
+      </div>
+      <div class="buttons-wrapper form-group">
+        <button routerLink="/admin/registration" class="btn btn-primary">Регистрация</button>
+        <button type="submit" class="btn btn-success">Войти</button>
+      </div>
+    </form>
+    <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+    <a routerLink="/" class="btn btn-link">&larr; Вернуться на Главную</a>
+  </div>
+</div>

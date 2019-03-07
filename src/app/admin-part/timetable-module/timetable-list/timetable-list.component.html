@@ -1,0 +1,24 @@
+<table class="table admin-page__table">
+  <tr>
+    <th>Номер занятия</th>
+    <th>Тип занятия</th>
+    <th>День недели</th>
+    <th>Тип недели</th>
+    <th>Аудитория</th>
+    <th>Группа</th>
+    <th>Преподаватель</th>
+    <th>Предмет</th>
+  </tr>
+  <tr *ngFor="let item of results.timetable" routerLink="/admin/timetable/form" [queryParams]="{id: item.id}" class="admin-page__row">
+    <td>{{ item.lessonNumber }}</td>
+    <td>{{ item.lessonType }}</td>
+    <td>{{ results.weekDays[item.weekDay] }}</td>
+    <td>{{ item.weekType }}</td>
+    <td>{{ results.auditories[item.auditoryID] }}</td>
+    <td>{{ results.groups[item.groupID] }}</td>
+    <td>{{ results.teachers[item.teacherID] }}</td>
+    <td>{{ results.subjects[item.subjectID] }}</td>
+  </tr>
+</table>
+<p class="total-count">{{ totalRows }} item{{ totalRows != 1 ? 's' : ''}} in total.</p>
+<a class="btn btn-primary add-new" routerLink="/admin/timetable/form"><i class="fas fa-plus"></i> Добавить Запись</a>

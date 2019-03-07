@@ -1,0 +1,25 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group" >
+      <label for="formInput">Номер аудитории</label>
+      <input type="text" class="form-control" [(ngModel)]="numberField" name="number" id="formInput" />
+    </div>
+    <div class="form-group">
+      <label for="formSelect">Тип аудитории</label>
+      <select class="form-control" [(ngModel)]="typeField" name="type" id="formSelect">
+        <option>Лекционная</option>
+        <option>Лаборатория</option>
+      </select>
+    </div>
+    <div class="buttons-wrapper form-group">
+      <button routerLink="/admin/auditories" class="btn btn-danger">Отменить</button>
+      <button type="submit" class="btn btn-success">Подтвердить</button>
+    </div>
+    <hr>
+    <div *ngIf="editState" class="form-group single-btn-wrapper">
+      <button (click)="confirm('Удалить аудиторию?') ? deleteData() : null" class="btn btn-danger"><i class="far fa-trash-alt"></i> Удалить</button>
+    </div>
+  </form>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+</div>

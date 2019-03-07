@@ -1,0 +1,42 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group" >
+      <label for="formInput1">Группа</label>
+      <input type="text" class="form-control" [(ngModel)]="nameField" name="name" id="formInput1" />
+    </div>
+    <div class="form-group">
+      <label for="formSelect1">Курс</label>
+      <select class="form-control" [(ngModel)]="courseField" name="course" id="formSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group" >
+      <label for="formInput2">Год поступления</label>
+      <input type="text" class="form-control" [(ngModel)]="admissionYearField" name="admissionYear" id="formInput2" />
+    </div>
+    <div class="form-group" >
+      <label for="formInput3">Год выпуска</label>
+      <input type="text" class="form-control" [(ngModel)]="graduatingYearField" name="graduatingYear" id="formInput3" />
+    </div>
+    <div class="form-group">
+      <label for="formSelect2">Кафедра</label>
+      <select class="form-control" [(ngModel)]="cathedraField" name="cathedra" id="formSelect2">
+        <option *ngFor="let cathedra of cathedras" value="{{cathedra.id}}">{{cathedra.name}}</option>
+      </select>
+    </div>
+    <div class="buttons-wrapper form-group">
+      <button routerLink="/admin/groups" class="btn btn-danger">Отменить</button>
+      <button type="submit" class="btn btn-success">Подтвердить</button>
+    </div>
+    <hr>
+    <div *ngIf="editState" class="form-group single-btn-wrapper">
+      <button (click)="confirm('Удалить группу?') ? deleteData() : null" class="btn btn-danger"><i class="far fa-trash-alt"></i> Удалить</button>
+    </div>
+  </form>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+</div>

@@ -1,0 +1,4 @@
+<div class="container-fluid">
+  <app-filter (onOptionsSelected)="loadData($event)" [type]="'default'"></app-filter>
+  <app-schedule-table [data]="weekSchedule"></app-schedule-table>
+</div>

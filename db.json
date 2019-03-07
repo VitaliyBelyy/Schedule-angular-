@@ -1,0 +1,275 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "a",
+      "password": "a"
+    },
+    {
+      "login": "admin",
+      "password": "admin",
+      "id": 2
+    },
+    {
+      "login": "test",
+      "password": "test",
+      "id": 3
+    }
+  ],
+  "auditories": [
+    {
+      "id": 1,
+      "number": "77712",
+      "type": "Лекционная"
+    },
+    {
+      "number": "123",
+      "type": "Лекционная",
+      "id": 2
+    },
+    {
+      "number": "133",
+      "type": "Лекционная",
+      "id": 3
+    },
+    {
+      "number": "154",
+      "type": "Лаборатория",
+      "id": 4
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Факультет компьютерных наук и технологий"
+    },
+    {
+      "name": "Транспортный факультет",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Факультет радиоэлектроники и телекоммуникаций"
+    },
+    {
+      "id": 4,
+      "name": "Электротехнический факультет"
+    }
+  ],
+  "cathedras": [
+    {
+      "id": 1,
+      "name": "Кафедра системного анализа",
+      "departmentID": "1"
+    },
+    {
+      "id": 2,
+      "name": "Отраслевое машиностроение",
+      "departmentID": "2"
+    },
+    {
+      "name": "Кафедра инженерии программного обеспечения",
+      "departmentID": "1",
+      "id": 3
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "fullName": "Белый Виталий Викторович",
+      "title": "Кандидат технических наук",
+      "cathedraID": "1"
+    },
+    {
+      "id": 2,
+      "fullName": "Зеленова Каролина Платоновна ",
+      "title": "Доцент",
+      "cathedraID": "1"
+    },
+    {
+      "fullName": "Никифоров Демьян Матвеевич",
+      "title": "Ассистент",
+      "cathedraID": "1",
+      "id": 3
+    },
+    {
+      "fullName": "Сидорова Ева Виталиевна ",
+      "title": "Кандидат технических наук",
+      "cathedraID": "3",
+      "id": 4
+    },
+    {
+      "fullName": "Тихомиров Олег Вячеславович",
+      "title": "Старший преподаватель",
+      "cathedraID": "3",
+      "id": 5
+    },
+    {
+      "fullName": "Белов Аким Эдуардович",
+      "title": "Профессор",
+      "cathedraID": "2",
+      "id": 6
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Теория принятия решений",
+      "shortName": "ТПР",
+      "note": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa eum id molestiae necessitatibus nihil officiis, placeat quas reprehenderit sunt. Blanditiis consequatur, deleniti dolorem excepturi illo porro reiciendis ut veritatis."
+    },
+    {
+      "name": "Анализ данных",
+      "shortName": "АД",
+      "note": "lorem",
+      "id": 2
+    },
+    {
+      "name": "Методы оптимизации и исследование операций",
+      "shortName": "МО",
+      "note": "lorem",
+      "id": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "nameGroup": "КНТ-415",
+      "course": 4,
+      "admissionYear": 2015,
+      "graduatingYear": 2019,
+      "cathedraID": "3"
+    },
+    {
+      "nameGroup": "КНТ-827",
+      "course": "3",
+      "admissionYear": "2017",
+      "graduatingYear": "2020",
+      "cathedraID": "1",
+      "id": 2
+    },
+    {
+      "nameGroup": "ОМ-777",
+      "course": "1",
+      "admissionYear": "2018",
+      "graduatingYear": "2022",
+      "cathedraID": "2",
+      "id": 3
+    }
+  ],
+  "timetable": [
+    {
+      "id": 1,
+      "lessonNumber": "1",
+      "lessonType": "Лабораторная работа",
+      "weekDay": "1",
+      "weekType": "Числитель",
+      "auditoryID": 1,
+      "groupID": 1,
+      "teacherID": 1,
+      "subjectID": 1
+    },
+    {
+      "id": 2,
+      "lessonNumber": "2",
+      "lessonType": "Лекция",
+      "weekDay": "1",
+      "weekType": "Числитель",
+      "auditoryID": "2",
+      "groupID": "1",
+      "teacherID": "2",
+      "subjectID": "2"
+    },
+    {
+      "id": 3,
+      "lessonNumber": "2",
+      "lessonType": "Лекция",
+      "weekDay": "2",
+      "weekType": "Числитель",
+      "auditoryID": "3",
+      "groupID": "1",
+      "teacherID": "1",
+      "subjectID": "1"
+    },
+    {
+      "lessonNumber": "1",
+      "lessonType": "Лекция",
+      "weekDay": "1",
+      "weekType": "Знаменатель",
+      "auditoryID": "1",
+      "groupID": "1",
+      "teacherID": "1",
+      "subjectID": "1",
+      "id": 4
+    },
+    {
+      "lessonNumber": "2",
+      "lessonType": "Лабораторная работа",
+      "weekDay": "1",
+      "weekType": "Знаменатель",
+      "auditoryID": "1",
+      "groupID": "1",
+      "teacherID": "1",
+      "subjectID": "1",
+      "id": 5
+    },
+    {
+      "lessonNumber": "4",
+      "lessonType": "Практическое занятие",
+      "weekDay": "5",
+      "weekType": "Числитель",
+      "auditoryID": "1",
+      "groupID": "1",
+      "teacherID": "3",
+      "subjectID": "3",
+      "id": 6
+    },
+    {
+      "lessonNumber": "1",
+      "lessonType": "Лекция",
+      "weekDay": "2",
+      "weekType": "Числитель",
+      "auditoryID": "2",
+      "groupID": "1",
+      "teacherID": "1",
+      "subjectID": "1",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "lessonNumber": "1",
+      "lessonType": "Лекция",
+      "weekDay": "3",
+      "weekType": "Числитель",
+      "auditoryID": "4",
+      "groupID": "3",
+      "teacherID": "4",
+      "subjectID": "2"
+    },
+    {
+      "lessonNumber": "4",
+      "lessonType": "Лекция",
+      "weekDay": "1",
+      "weekType": "Числитель",
+      "auditoryID": "4",
+      "groupID": "3",
+      "teacherID": "6",
+      "subjectID": "3",
+      "id": 9
+    },
+    {
+      "lessonNumber": "2",
+      "lessonType": "Лекция",
+      "weekDay": "1",
+      "weekType": "Числитель",
+      "auditoryID": "3",
+      "groupID": "3",
+      "teacherID": "4",
+      "subjectID": "1",
+      "id": 10
+    }
+  ],
+  "access-key": {
+    "value": 260847
+  }
+}

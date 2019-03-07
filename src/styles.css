@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background: url("https://www.meme-arsenal.com/memes/c3fdad4d3f513c4d3677a9b996789718.jpg") no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.table {
+    background-color: #fff;
+}
+
+.admin-page__table {
+    margin: 10px 0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.admin-page__table td:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+.admin-page__row {
+    cursor: pointer;
+}
+
+.admin-page__row:hover {
+    background-color: #f1f1f1;
+}
+
+.total-count {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-wrapper {
+    max-width: 350px;
+    margin: 15% auto 0;
+    font-size: 16px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-btn-wrapper {
+    text-align: right;
+}
+
+hr:last-child {
+    display: none;
+}
+
+.btn:focus {
+    outline: none!important;
+}

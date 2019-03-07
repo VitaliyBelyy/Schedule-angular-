@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="form-wrapper">
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group" >
+        <label for="loginInput">Логин</label>
+        <input type="text" class="form-control" [(ngModel)]="loginField" name="login" id="loginInput" required />
+      </div>
+      <div class="form-group">
+        <label for="passwordInput">Пароль</label>
+        <input type="password" class="form-control" [(ngModel)]="passwordField" name="password" id="passwordInput" required />
+      </div>
+      <div class="form-group">
+        <label for="keyInput">Ключ</label>
+        <input type="password" class="form-control" [(ngModel)]="keyField" name="key" id="keyInput" required />
+      </div>
+      <div class="buttons-wrapper form-group">
+        <button routerLink="/admin" class="btn btn-danger">Выйти</button>
+        <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+      </div>
+    </form>
+    <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+    <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+  </div>
+</div>

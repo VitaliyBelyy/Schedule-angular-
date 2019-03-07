@@ -1,0 +1,24 @@
+<div class="filter">
+  <select class="filter__select form-control" (change)="loadCathedras()" [(ngModel)]="departmentField">
+    <option value='0' disabled selected hidden>Факультет</option>
+    <option *ngFor="let department of departments" [value]="department.id">{{department.name}}</option>
+  </select>
+  <select class="filter__select form-control" [disabled]="cathedras.length == 0" (change)="type == 'default' ? loadGroups() : loadTeachers()" [(ngModel)]="cathedraField">
+    <option value='0' disabled selected hidden>Кафедра</option>
+    <option *ngFor="let cathedra of cathedras"  [value]="cathedra.id">{{cathedra.name}}</option>
+  </select>
+  <select *ngIf="type == 'default'" class="filter__select form-control" [disabled]="groups.length == 0" [(ngModel)]="groupField">
+    <option value='0' disabled selected hidden>Группа</option>
+    <option *ngFor="let group of groups" [value]="group.id">{{group.nameGroup}}</option>
+  </select>
+  <select *ngIf="type == 'for-teachers'" class="filter__select form-control" [disabled]="teachers.length == 0" [(ngModel)]="teacherField">
+    <option value='0' disabled selected hidden>Преподаватель</option>
+    <option *ngFor="let teacher of teachers" [value]="teacher.id">{{teacher.fullName}}</option>
+  </select>
+  <select class="filter__select form-control" [(ngModel)]="weekTypeField">
+    <option value='' disabled selected hidden>Тип недели</option>
+    <option>Числитель</option>
+    <option>Знаменатель</option>
+  </select>
+  <button type="button" (click)="onSearch()"  class="btn btn-primary">Поиск</button>
+</div>

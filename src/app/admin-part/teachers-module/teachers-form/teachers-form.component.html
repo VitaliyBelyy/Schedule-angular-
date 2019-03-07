@@ -1,0 +1,34 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group" >
+      <label for="formInput">ФИО преподавателя</label>
+      <input type="text" class="form-control" [(ngModel)]="nameField" name="name" id="formInput" />
+    </div>
+    <div class="form-group">
+      <label for="formSelect1">Должность</label>
+      <select class="form-control" [(ngModel)]="titleField" name="title" id="formSelect1">
+        <option>Ассистент</option>
+        <option>Старший преподаватель</option>
+        <option>Доцент</option>
+        <option>Кандидат технических наук</option>
+        <option>Профессор</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="formSelect2">Кафедра</label>
+      <select class="form-control" [(ngModel)]="cathedraField" name="cathedra" id="formSelect2">
+        <option *ngFor="let cathedra of cathedras" value="{{cathedra.id}}">{{cathedra.name}}</option>
+      </select>
+    </div>
+    <div class="buttons-wrapper form-group">
+      <button routerLink="/admin/teachers" class="btn btn-danger">Отменить</button>
+      <button type="submit" class="btn btn-success">Подтвердить</button>
+    </div>
+    <hr>
+    <div *ngIf="editState" class="form-group single-btn-wrapper">
+      <button (click)="confirm('Удалить преподавателя?') ? deleteData() : null" class="btn btn-danger"><i class="far fa-trash-alt"></i> Удалить</button>
+    </div>
+  </form>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+</div>

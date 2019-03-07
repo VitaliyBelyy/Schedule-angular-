@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="form-wrapper">
+    <form>
+      <div class="form-group" >
+        <label for="keyInput">Ключ</label>
+        <input type="text" class="form-control" [(ngModel)]="keyValue" name="key" id="keyInput" readonly />
+      </div>
+      <div class="form-group single-btn-wrapper">
+        <button (click)="setNewKey()" class="btn btn-success">Обновить ключ</button>
+      </div>
+    </form>
+    <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+    <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+  </div>
+</div>

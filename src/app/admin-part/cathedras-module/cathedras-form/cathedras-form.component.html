@@ -1,0 +1,24 @@
+<div class="form-wrapper">
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group" >
+      <label for="formInput">Название кафедры</label>
+      <input type="text" class="form-control" [(ngModel)]="nameField" name="name" id="formInput" />
+    </div>
+    <div class="form-group">
+      <label for="formSelect">Факультет</label>
+      <select class="form-control" [(ngModel)]="departmentField" name="department" id="formSelect">
+        <option *ngFor="let department of departments" value="{{department.id}}">{{department.name}}</option>
+      </select>
+    </div>
+    <div class="buttons-wrapper form-group">
+      <button routerLink="/admin/cathedras" class="btn btn-danger">Отменить</button>
+      <button type="submit" class="btn btn-success">Подтвердить</button>
+    </div>
+    <hr>
+    <div *ngIf="editState" class="form-group single-btn-wrapper">
+      <button (click)="confirm('Удалить кафедру?') ? deleteData() : null" class="btn btn-danger"><i class="far fa-trash-alt"></i> Удалить</button>
+    </div>
+  </form>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+</div>

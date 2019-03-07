@@ -1,0 +1,14 @@
+<table class="table admin-page__table">
+  <tr>
+    <th>Группа</th>
+    <th>Курс</th>
+    <th>Кафедра</th>
+  </tr>
+  <tr *ngFor="let group of results.groups" routerLink="/admin/groups/form" [queryParams]="{id: group.id}" class="admin-page__row">
+    <td>{{ group.nameGroup }}</td>
+    <td>{{ group.course }}</td>
+    <td>{{ results.cathedras[group.cathedraID] }}</td>
+  </tr>
+</table>
+<p class="total-count">{{ totalRows }} group{{ totalRows != 1 ? 's' : ''}} in total.</p>
+<a class="btn btn-primary add-new" routerLink="/admin/groups/form"><i class="fas fa-plus"></i> Добавить Группу</a>

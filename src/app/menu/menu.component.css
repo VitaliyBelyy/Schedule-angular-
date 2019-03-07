@@ -1,0 +1,12 @@
+#primary-nav {
+    border-radius: 0;
+}
+
+.navbar-nav {
+    font-size: 20px;
+}
+
+.navbar-nav .active {
+    color: #fff;
+    background-color: transparent;
+}

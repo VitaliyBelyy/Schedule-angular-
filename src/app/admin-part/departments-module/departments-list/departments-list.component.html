@@ -1,0 +1,10 @@
+<table class="table admin-page__table">
+  <tr>
+    <th>Факультет</th>
+  </tr>
+  <tr *ngFor="let department of departments" routerLink="/admin/departments/form" [queryParams]="{id: department.id}" class="admin-page__row">
+    <td>{{ department.name }}</td>
+  </tr>
+</table>
+<p class="total-count">{{ totalRows }} department{{ totalRows != 1 ? 's' : ''}} in total.</p>
+<a class="btn btn-primary add-new" routerLink="/admin/departments/form"><i class="fas fa-plus"></i> Добавить Факультет</a>
